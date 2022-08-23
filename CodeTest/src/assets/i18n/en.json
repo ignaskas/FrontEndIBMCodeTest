@@ -1,0 +1,11 @@
+{
+  "app": "CodeTest",
+  "common": {
+    "form": {
+      "required": "this field is required"
+    }
+  },
+  "lore": {
+    "companyName": "Enter Company Name '{{name}}'"
+  }
+}

@@ -1,0 +1,27 @@
+<html ng-app="codeTest">
+<body ng-controller="MainCtrl">
+<head>
+</head>
+<mat-divider></mat-divider>
+<form [formGroup]="form" class="finnhub-form">
+    <app-date-picker id="datePicker" (found)="CatchDate($event)"></app-date-picker>
+    <tr>
+    <td colspan="2">
+      <mat-form-field class="w-250p" appearance="outline">
+        <mat-error *ngIf="hasError('name', 'required')">{{'Must Be plain letters only' | translate}}</mat-error>
+        <mat-label>{{'Enter Company Name' | translate}}</mat-label>
+        <input id="company-name" matInput formControlName="name" #testValue  placeholder='GOOGL'/>
+      </mat-form-field>
+    </td>
+    </tr>
+  <button mat-raised-button color="basic" class="search-For-Company" [disabled]="form.invalid" (click)="getSymbolFromSearch(testValue.value)">{{'Search for Company' | translate}}</button>
+
+    <tr class="search-Results" *ngFor="let item of companyList">
+    <button mat-raised-button color="basic" class="new-company-btn" (click)="getStockCandles(item.Ticker, 'D', unixTime[0], unixTime[1])">Company Name: [{{item.Name}}], Country: [{{item.Country}}], Currency: [{{item.Currency}}], URL: [{{item.WebURL}}]</button>
+    </tr>
+</form>
+<candle-stick id="charts" *ngIf="tempFix" [chartData]="chartData"></candle-stick>
+
+
+</body>
+</html>

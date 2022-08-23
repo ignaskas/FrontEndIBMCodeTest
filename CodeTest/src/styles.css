@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+html{
+  background-color: grey;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+#charts{
+  float: right;
+  width: 500px;
+  height: 500px;
+  padding-right: 20%;
+}
+
+#datePicker{
+  display: inline-block;
+}
+
+.finnhub-form{
+  display: inline-block;
+}
+
+.w-250p{
+  width: 250px;
+}
+
+.new-company-btn{
+  width: 900px;
+  text-align: center;
+}
+
+.search-Results{
+  margin: 2px;
+  display: block;
+}
+
+.search-For-Company{
+
+}
